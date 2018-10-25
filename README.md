@@ -64,3 +64,44 @@ cielo_api.capture_sale(payment_id)
 
 # E também podemos fazer seu cancelamento, se for o caso
 cielo_api.cancel_payment(payment_id)
+```
+
+### Criando um pagamento com cartão de débito
+
+```ruby
+require "cielo/api30"
+
+# Configure seu merchant
+merchant = Cielo::API30.merchant("MERCHANT-ID", "MERCHANT-KEY")
+
+# Crie uma instância de Sale informando o ID do pagamento
+sale = Cielo::API30::Sale.new("123")
+
+# Crie uma instância de Customer informando o nome do cliente
+sale.customer = Cielo::API30::Customer.new("Fulano de Tal")
+
+# Crie uma instância de Payment informando o valor do pagamento
+sale.payment = Cielo::API30::Payment.new(15700)
+
+# Informe o tipo de pagamento que será utilizado
+sale.payment.type = Cielo::API30::Payment::PAYMENTTYPE_DEBITCARD
+sale.payment.return_url = 'http://www.cielo.com.br'
+sale.payment.authenticate = false
+
+# Crie  uma instância de Credit Card utilizando os dados de teste
+sale.payment.debit_card = Cielo::API30::DebitCard.new(security_code: "123", brand: "Visa")
+sale.payment.debit_card.expiration_date = "12/2018"
+sale.payment.debit_card.holder = "Fulano de Tal"
+sale.payment.debit_card.card_number = "0000000000000001"
+
+# Configure o SDK com seu merchant e o ambiente apropriado para criar a venda
+cielo_api = Cielo::API30.client(merchant, Cielo::API30::Environment::sandbox)
+
+# Crie a venda na Cielo
+sale = cielo_api.create_sale(sale)
+
+# Com a venda criada, já temos o ID do pagamento, TID e demais dados retornados pela Cielo
+payment_id = sale.payment.payment_id
+
+# E também podemos fazer seu cancelamento, se for o caso
+cielo_api.cancel_payment(payment_id)

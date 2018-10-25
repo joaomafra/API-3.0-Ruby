@@ -22,6 +22,7 @@ module Cielo
                     :recurrent,
                     :recurrent_payment,
                     :credit_card,
+                    :debit_card,
                     :proof_of_sale,
                     :authorization_code,
                     :soft_descriptor,
@@ -47,7 +48,8 @@ module Cielo
                     :bar_code_number,
                     :digitable_line,
                     :address,
-                    :return_info
+                    :return_info,
+                    :authentication_url
 
       def initialize(amount, installments = 1)
         @amount = amount
@@ -73,6 +75,7 @@ module Cielo
         payment.recurrent = data["Recurrent"]
         payment.recurrent_payment = RecurrentPayment.from_json(data["RecurrentPayment"])
         payment.credit_card = CreditCard.from_json(data["CreditCard"])
+        payment.debit_card = DebitCard.from_json(data["DebitCard"])
         payment.proof_of_sale = data["ProofOfSale"]
         payment.authorization_code = data["AuthorizationCode"]
         payment.soft_descriptor = data["SoftDescriptor"]
@@ -89,6 +92,7 @@ module Cielo
         payment.return_code = data["ReturnCode"]
         payment.return_message = data["ReturnMessage"]
         payment.status = data["Status"]
+        payment.authentication_url = data["AuthenticationUrl"]
 
         payment.links = data["Links"]
         payment.extra_data_collection = data["ExtraDataCollection"]
@@ -117,6 +121,7 @@ module Cielo
           Recurrent: @recurrent,
           RecurrentPayment: @recurrent_payment,
           CreditCard: @credit_card,
+          DebitCard: @debit_card,
           SoftDescriptor: @soft_descriptor,
           ReturnUrl: @return_url,
           Provider: @provider,
