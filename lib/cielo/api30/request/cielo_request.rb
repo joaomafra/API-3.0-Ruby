@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require "uuidtools"
 require "json"
 require "net/http"

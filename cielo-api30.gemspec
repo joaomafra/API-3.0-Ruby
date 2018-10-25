@@ -13,7 +13,6 @@ Gem::Specification.new do |spec|
   spec.license       = 'MIT'
   spec.has_rdoc      = 'yard'
 
-  spec.required_ruby_version = '>= 2.0.0'
   spec.require_paths = ['lib']
   spec.files = ["lib/cielo/api30.rb",
                 "lib/cielo/environment.rb",
@@ -32,7 +31,7 @@ Gem::Specification.new do |spec|
                 "lib/cielo/api30/request/update_sale_request.rb"]
 
   spec.add_dependency "bundler", "~> 1.6"
-  spec.add_dependency "uuidtools", "~> 2.1"
+  spec.add_dependency "uuidtools", "~> 2.1.5"
   spec.add_development_dependency "yard", "~> 0.8"
   spec.add_development_dependency "rspec", "~> 3.4"
 end

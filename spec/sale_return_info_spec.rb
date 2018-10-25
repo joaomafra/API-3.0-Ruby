@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require "cielo/api30"
 require "cielo/api30/return_info"
 
