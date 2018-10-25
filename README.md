@@ -63,4 +63,4 @@ payment_id = sale.payment.payment_id
 cielo_api.capture_sale(payment_id)
 
 # E também podemos fazer seu cancelamento, se for o caso
-cielo_api.cancel_sale(payment_id)
+cielo_api.cancel_payment(payment_id)
