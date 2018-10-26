@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require "cielo/api30/environment"
 require "cielo/api30/merchant"
 require "cielo/api30/client"
@@ -17,7 +18,7 @@ require "cielo/api30/request/update_sale_request"
 module Cielo
   module API30
     def self.root_path
-      File.dirname __dir__
+      File.expand_path("../..", __FILE__)
     end
 
     def self.client(merchant, environment = nil)

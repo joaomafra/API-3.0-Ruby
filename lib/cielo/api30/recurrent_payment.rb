@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module Cielo
   module API30
     class RecurrentPayment
