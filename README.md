@@ -1,5 +1,7 @@
 # SDK Ruby Cielo
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/5f2fb1294a875befab26/maintainability)](https://codeclimate.com/github/joaomafra/API-3.0-Ruby/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/5f2fb1294a875befab26/test_coverage)](https://codeclimate.com/github/joaomafra/API-3.0-Ruby/test_coverage) [![Build Status](https://travis-ci.org/joaomafra/API-3.0-Ruby.svg?branch=master)](https://travis-ci.org/joaomafra/API-3.0-Ruby)
+
 ## Principais recursos
 
 * [x] Pagamentos por cartão de crédito.
