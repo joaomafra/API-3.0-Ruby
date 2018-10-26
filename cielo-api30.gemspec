@@ -19,6 +19,7 @@ Gem::Specification.new do |spec|
                 "lib/cielo/merchant.rb",
                 "lib/cielo/api30/address.rb",
                 "lib/cielo/api30/credit_card.rb",
+                "lib/cielo/api30/debit_card.rb",
                 "lib/cielo/api30/customer.rb",
                 "lib/cielo/api30/payment.rb",
                 "lib/cielo/api30/recurrent_payment.rb",
@@ -35,4 +36,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "yard", "~> 0.8"
   spec.add_development_dependency "rspec", "~> 3.4"
+  spec.add_development_dependency "simplecov"
+  spec.add_development_dependency "simplecov-console"
 end
