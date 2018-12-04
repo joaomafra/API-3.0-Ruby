@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.summary       = "SDK API 3.0 da Cielo"
   spec.homepage      = 'https://github.com/developercielo/API-3.0-Ruby'
   spec.license       = 'MIT'
-  spec.has_rdoc      = 'yard'
+  #spec.has_rdoc      = 'yard'
 
   spec.require_paths = ['lib']
   spec.files = ["lib/cielo/api30.rb",
