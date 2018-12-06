@@ -35,6 +35,7 @@ module Cielo
                     :received_date,
                     :captured_amount,
                     :captured_date,
+                    :voided_amount,
                     :currency,
                     :country,
                     :return_code,
@@ -87,6 +88,7 @@ module Cielo
         payment.received_date = data["ReceivedDate"]
         payment.captured_amount = data["CapturedAmount"]
         payment.captured_date = data["CapturedDate"]
+        payment.voided_amount = data["VoidedAmount"]
         payment.currency = data["Currency"]
         payment.country = data["Country"]
         payment.return_code = data["ReturnCode"]
